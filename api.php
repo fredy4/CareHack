@@ -1,10 +1,10 @@
     <?php
     	// Account details
-    	$apiKey = urlencode('https://api.textlocal.in/send/');
+    	$apiKey = urlencode('0KRseuhcuMs-cjLcUUmo6Zs18R7wV2dW0nvpxlSnMN');
     	
     	// Message details
-    	$numbers = array(918123456789, 918987654321);
-    	$sender = urlencode('CAREHA');
+    	$numbers = array(918111814102);
+    	$sender = urlencode('TXTLCL');
     	$message = rawurlencode('This is your message');
      
     	$numbers = implode(',', $numbers);

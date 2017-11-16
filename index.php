@@ -1,8 +1,19 @@
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
   <title>CareHack Task</title>
+  <?php 
+      if(isset($_SESSION["log"])){
+       if($_SESSION["log"]==1&&$_SESSION["type"]=="d")
+         header("Location:doc.php");
+       elseif($_SESSION["log"]==1&&$_SESSION["type"]=="p")
+         header("Location:patient.php");
+       
+      } 
+      ?>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
@@ -22,7 +33,7 @@
   <div class="card"></div>
   <div class="card">
     <h1 class="title">Login</h1>
-    <form>
+    <form action="login.php" method="post">
       <div class="input-container">
         <input type="tel" id="phone" required="required"/>
         <label for="phone">Mobile</label>
@@ -34,7 +45,7 @@
         <div class="bar"></div>
       </div>
       <div class="button-container">
-        <button><span>Go</span></button>
+        <button type="submit" name="submit" value="login"><span>Go</span></button>
       </div>
     </form>
   </div>
@@ -43,25 +54,25 @@
     <h1 class="title">Register
       <div class="close"></div>
     </h1>
-    <form>
+    <form action="login.php" method="post">
       <div class="input-container">
-        <input type="text" id="fname" required="required"/>
+        <input type="text" id="fname" name="fname" required="required"/>
         <label for="fname">First Name</label>
         <div class="bar"></div>
       </div>
 
       <div class="input-container">
-        <input type="text" id="lname" required="required"/>
+        <input type="text" id="lname" name="lname" required="required"/>
         <label for="lname">Last Name</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="tel" id="phone" required="required"/>
+        <input type="tel" id="phone" name="phone" required="required"/>
         <label for="phone">Mobile</label>
         <div class="bar"></div>
       </div>
       <div class="button-container">
-        <button><span>Next</span></button>
+      <button type="submit" name="submit" value="register"><span>Next</span></button>  
       </div>
     </form>
   </div>
