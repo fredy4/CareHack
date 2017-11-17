@@ -17,23 +17,25 @@
 </head>
 <body>
 	<?php 
-		if(isset($_POST["phone"])){
-			$id=$_POST["phone"];
-			if(($_POST["submit"])=="register"){
+		if(isset($_POST['phone'])){
+			$id=$_POST['phone'];
+			$pass=$_POST['password'];
+			if(($_POST['submit'])=='register'){
 	
-				$fnm=$_POST["fname"];
-				$lnm=$_POST["lname"];
+				$fnm=$_POST['fname'];
+				$lnm=$_POST['lname'];
+				
 				mt_rand();
 				$a=mt_rand();
-mysql_query("INSERT INTO patient (mno, fname, lname, otp) VALUES ('".$id."','".$fnm."', '".$lnm."','".$a."')");
-		$tmp=mysql_fetch_array(mysql_query("SELECT * FROM patient where mno = '$id'"));
-		print_r($tmp);
+				mysql_query("INSERT INTO patient (mno, fname, lname, otp) VALUES ('".$id."','".$fnm."', '".$lnm."','".$a."')");
+	//$tmp=mysql_fetch_array(mysql_query("SELECT * FROM patient where mno =  	'2147483647'"));
+		//print_r($tmp);
 				
-				$_SESSION["log"]=1;
-			    $_SESSION["fname"]=$_POST["fname"];
-			    $_SESSION["mno"]=$_POST["phone"];
-			    $_SESSION["type"]="p";
-			     $_SESSION["otp"]=$a;
+				$_SESSION['log']=1;
+			    $_SESSION['fname']=$_POST['fname'];
+			    $_SESSION['mno']=$_POST['phone'];
+			    $_SESSION['type']='p';
+			     $_SESSION['otp']=$a;
 
 			    /*$apiKey = urlencode('0KRseuhcuMs-cjLcUUmo6Zs18R7wV2dW0nvpxlSnMN');
     	
@@ -57,16 +59,16 @@ mysql_query("INSERT INTO patient (mno, fname, lname, otp) VALUES ('".$id."','".$
 		    	
 		    	// Process your response here
 		    	echo $response;*/
-			    header("Location:verify.php");
+			    //header("Location:verify.php");
 			}
 
-			elseif ($_POST["submit"]=="login") {
-				$tmp=mysql_fetch_array(mysql_query("SELECT * FROM patient where id = '$id'"));
+			elseif ($_POST['submit']=='login') {
+				$tmp=mysql_fetch_array(mysql_query("SELECT * FROM patient where mno = '$id' and password='$pass'"));
 				if($tmp){
-					$_SESSION["log"]=1;
-					$_SESSION["type"]="p";
-					$_SESSION["id"]=$id;
-					header("Location:verify.php");
+					$_SESSION['log']=1;
+					$_SESSION['type']='p';
+					$_SESSION['mno']=$id;
+					header("Location:appointment.php");
 
 				}
 				else{
@@ -78,5 +80,6 @@ mysql_query("INSERT INTO patient (mno, fname, lname, otp) VALUES ('".$id."','".$
 
 		}
 	?>
+
 </body>
 </html>

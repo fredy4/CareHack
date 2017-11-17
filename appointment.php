@@ -1,4 +1,5 @@
-
+<?php session_start(); 
+?>
 <html>
 <head>
 <title>CareHack Task</title>
@@ -19,56 +20,61 @@
     <div class="bg-agile">
 	<div class="book-appointment">
 	<h2>Make your Appointment</h2>
-			<form action="#" method="post">
+			<form action="gcalender.php" method="post">
 			<div class="left-agileits-w3layouts same">
 			<div class="gaps">
 				<p>Patient Name</p>
-					<input type="text" name="Patient Name" placeholder="" required=""/>
+					<input type="text" name="Patient Name" placeholder="" required="required"/>
 			</div>	
-				<div class="gaps">	
+			<div class="gaps">
+				<p>Doctor</p>	
+					<select class="form-control">
+						<option></option>
+						<option>Dr. Giriraj (Cardiac)</option>
+						<option>Dr. Sanju (Ophthalmology)</option>
+						<option>Dr. Nissi (Neurology)</option>
+						<option>Dr. Fredy (Psychology)</option>
+						<option>Dr. Shibin (Dermatology)</option>
+					</select>
+			</div>
+			<div class="gaps">
+				<p>Appontment Date</p>		
+						<input  id="datepicker1" name="date" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'yyyy/dd/mm';}" required="required">
+			</div>
+			<div class="gaps">	
 				<p>Phone Number</p>
-					<input type="text" name="Number" placeholder="" required=""/>
+					<input type="text" name="Number" placeholder="" required="required"/>
 				</div>
-				<div class="gaps">
-				<p>Email</p>
-						<input type="email" name="email" placeholder="" required="" />
-				</div>	
-				<div class="gaps">
-				<p>Symptoms</p>
-						<textarea name="About Symptoms" placeholder="" required="" ></textarea>
-				</div>
+				
 			</div>
 			<div class="right-agileinfo same">
 			<div class="gaps">
-				<p>Select Date</p>		
-						<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-			</div>
+				<p>Age and Gender</p>
+						<input type="text" name="aggen" placeholder="eg: 32 M" required="required" ></input>
+				</div>
 			<div class="gaps">
 				<p>Department</p>	
-					<select class="form-control">
+					<select class="form-control" required="required">
 						<option></option>
-						<option>Cardiology</option>
+						<option>Cardiac</option>
 						<option>Ophthalmology</option>
 						<option>Neurology</option>
 						<option>Psychology</option>
 						<option>Dermatology</option>
 					</select>
 			</div>
-			<div class="gaps">
-				<p>Gender</p>	
-					<select class="form-control">
-						<option></option>
-						<option>Male</option>
-						<option>Female</option>
-					</select>
-			</div>
+			
 			<div class="gaps">
 				<p>Time</p>		
 					<input type="text" id="timepicker" name="Time" class="timepicker form-control" value="">	
 			</div>
+			<div class="gaps">
+				<p>Email</p>
+						<input type="email" name="email" placeholder="" required="required" />
+				</div>
 			</div>
-			<div class="clear"></div>
-						  <input type="submit" value="Make an appointment">
+			<div class="button-container"></div>
+						  <input type="submit" name= "submit" value="Make an appointment">
 			</form>
 		</div>
    </div>

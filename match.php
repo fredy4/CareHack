@@ -17,19 +17,18 @@
 </head>
 <body>
 	<?php 
-	echo "Hi, ".$_SESSION["otp"];
+	//echo "Hi, ".$_SESSION["otp"];
 	$otp=$_SESSION["otp"];
 	$uotp=$_POST["otp"];
 	echo $otp;
 	echo $uotp;
 	
 	if ($otp==$uotp) {
-		# code...
-		header("Location:appointment.html");
+		
+		header("Location:pass.php");
 	}
 	else {
-		header("Location:logout.php");
-		echo "You have entered a wrong OTP. Please try again";
+		echo "<script> alert('You have entered a wrong OTP. Please try again.');</script>";
 		
 	}
 	?>
