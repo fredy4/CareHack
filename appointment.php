@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 ?>
 <html>
 <head>
@@ -25,9 +25,9 @@
 			<div class="gaps">
 				<p>Patient Name</p>
 					<input type="text" name="Patient Name" placeholder="" required="required"/>
-			</div>	
+			</div>
 			<div class="gaps">
-				<p>Doctor</p>	
+				<p>Doctor</p>
 					<select class="form-control">
 						<option></option>
 						<option>Dr. Giriraj (Cardiac)</option>
@@ -38,14 +38,14 @@
 					</select>
 			</div>
 			<div class="gaps">
-				<p>Appontment Date</p>		
-						<input  id="datepicker1" name="date" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'yyyy/dd/mm';}" required="required">
+				<p>Appontment Date</p>
+						<input  id="datepicker1" name="date" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Y:M:d';}" required="required">
 			</div>
-			<div class="gaps">	
+			<div class="gaps">
 				<p>Phone Number</p>
 					<input type="text" name="Number" placeholder="" required="required"/>
 				</div>
-				
+
 			</div>
 			<div class="right-agileinfo same">
 			<div class="gaps">
@@ -53,7 +53,7 @@
 						<input type="text" name="aggen" placeholder="eg: 32 M" required="required" ></input>
 				</div>
 			<div class="gaps">
-				<p>Department</p>	
+				<p>Department</p>
 					<select class="form-control" required="required">
 						<option></option>
 						<option>Cardiac</option>
@@ -63,10 +63,10 @@
 						<option>Dermatology</option>
 					</select>
 			</div>
-			
+
 			<div class="gaps">
-				<p>Time</p>		
-					<input type="text" id="timepicker" name="Time" class="timepicker form-control" value="">	
+				<p>Time</p>
+					<input type="text" id="timepicker" name="Time" class="timepicker form-control" value="">
 			</div>
 			<div class="gaps">
 				<p>Email</p>
@@ -78,22 +78,26 @@
 			</form>
 		</div>
    </div>
-   
+
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="js/wickedpicker.js"></script>
 			<script type="text/javascript">
 				$('.timepicker').wickedpicker({twentyFour: false});
 			</script>
-		
+
 
 				<link rel="stylesheet" href="css/jquery-ui.css" />
 				<script src="js/jquery-ui.js"></script>
 				  <script>
 						  $(function() {
-							$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
+							$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker({
+    dateFormat: 'mm/dd/yy'
+});
+
+
 						  });
 				  </script>
-			
+
 
 </body>
 </html>

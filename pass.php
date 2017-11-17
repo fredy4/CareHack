@@ -164,8 +164,9 @@ body{
 </head>
 
 <body>
-<form action="logout.php" method="post">
+
   <div class="body"></div>
+  <form action="appointment.php" method="post">
 		<div class="grad"></div>
 		<div class="header">
 			<div>Create<span>Code</span></div>
@@ -174,10 +175,11 @@ body{
 		
 		<div class="login">
 				<input type="password" placeholder="Password" name="password"><br>
-				<input type="passwordconfirm" placeholder="Confirm password" name="passconf"><br>
+				<input type="password" placeholder="Confirm password" name="passconf"><br>
 				<input type="button" value="Update">
+				</form>
 		</div>
-		</form>
+		
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
