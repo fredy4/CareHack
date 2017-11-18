@@ -5,16 +5,8 @@
 <head>
 	<title>Verification</title>
 
-   <?php 	
-   $sql=mysql_connect("localhost:8080","root","root123");
-   if(!$sql)
-  	  {
-	   die("Couldn't connect".mysql_error());
-	  }
-	  else 
-	  
-  mysql_select_db("carehack",$sql);
-  ?>
+   <?php include 'mysqlconnect.php';
+   ?>
    <style type="text/css">
     body {
         background-color: #f0f0f2;
@@ -50,7 +42,7 @@
 <body>
 <div>
 	<?php 
-	echo "Hi, ". $_SESSION["otp"];
+	//echo "Hi, ". $_SESSION["otp"];
 	$b=$_SESSION["otp"];
 	?>
 	<form action="match.php" method ="POST">

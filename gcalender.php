@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>CareHack Task</title>
 </head>
 <body>
 <?php

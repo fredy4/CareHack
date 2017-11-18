@@ -4,15 +4,7 @@
 <html>
 <head>
 	<title>Verification</title>
-   <?php 	
-   $sql=mysql_connect("localhost:8080","root","root123");
-   if(!$sql)
-  	  {
-	   die("Couldn't connect".mysql_error());
-	  }
-	  else 
-	  
-  mysql_select_db("carehack",$sql);
+   <?php include 'mysqlconnect.php';
   ?>
 </head>
 <body>
@@ -25,10 +17,10 @@
 	
 	if ($otp==$uotp) {
 		
-		header("Location:pass.php");
+		header("Location:appointment.php");
 	}
 	else {
-		echo "<script> alert('You have entered a wrong OTP. Please try again.');</script>";
+		echo "<script> alert('You have entered a wrong OTP. Please try again.');window.location.href = 'verify.php';</script>";
 		
 	}
 	?>

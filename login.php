@@ -4,15 +4,7 @@
 <html>
 <head>
 	<title> CareHack Task </title>
-   <?php 	
-   $sql=mysql_connect("localhost:8080","root","root123");
-   if(!$sql)
-  	  {
-	   die("Couldn't connect".mysql_error());
-	  }
-	  else 
-	  
-  mysql_select_db("carehack",$sql);
+   <?php include 'mysqlconnect.php';
   ?>
 </head>
 <body>
@@ -37,7 +29,7 @@
 			    $_SESSION['type']='p';
 			     $_SESSION['otp']=$a;
 
-			    /*$apiKey = urlencode('0KRseuhcuMs-cjLcUUmo6Zs18R7wV2dW0nvpxlSnMN');
+			    $apiKey = urlencode('0KRseuhcuMs-cjLcUUmo6Zs18R7wV2dW0nvpxlSnMN');
     	
     	// Message details
 		    	$numbers = array($id);
@@ -58,8 +50,8 @@
 		    	curl_close($ch);
 		    	
 		    	// Process your response here
-		    	echo $response;*/
-			    //header("Location:verify.php");
+		    	echo $response;
+			    header("Location:verify.php");
 			}
 
 			elseif ($_POST['submit']=='login') {
