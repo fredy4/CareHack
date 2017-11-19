@@ -56,7 +56,7 @@
     	curl_close($ch);
     	
     	// Process your response here
-    	echo $response;
+    	//echo $response;
 				header("Location:verify.php");
 			}
 
