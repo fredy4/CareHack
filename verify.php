@@ -5,7 +5,7 @@
 <head>
 	<title>Verification</title>
 
-   <?php include 'mysqlconnect.php';
+   <?php include 'mysqliconnect.php';
    ?>
    <style type="text/css">
     body {
@@ -44,6 +44,7 @@
 	<?php 
 	//echo "Hi, ". $_SESSION["otp"];
 	$b=$_SESSION["otp"];
+    
 	?>
 	<form action="match.php" method ="POST">
 	<label for="otp">Enter the OTP sent to your registered mobile number</label><br>

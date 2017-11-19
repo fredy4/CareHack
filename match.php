@@ -4,16 +4,15 @@
 <html>
 <head>
 	<title>Verification</title>
-   <?php include 'mysqlconnect.php';
+   <?php include 'mysqliconnect.php';
   ?>
 </head>
 <body>
 	<?php 
-	//echo "Hi, ".$_SESSION["otp"];
+	
 	$otp=$_SESSION["otp"];
 	$uotp=$_POST["otp"];
-	echo $otp;
-	echo $uotp;
+	
 	
 	if ($otp==$uotp) {
 		

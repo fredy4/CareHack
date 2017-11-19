@@ -16,6 +16,9 @@
 
 </head>
 <body>
+<?php echo "Hi, ".$_SESSION['fname'];?>
+<li></li>
+<a href="logout.php" style="color: red">Logout</a>	
 <h1> Appointment Form </h1>
     <div class="bg-agile">
 	<div class="book-appointment">
