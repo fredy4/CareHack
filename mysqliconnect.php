@@ -1,6 +1,6 @@
 <?php
          $dbhost = 'localhost';
-         $dbuser = 'id3656188_root';
+         $dbuser = 'root';
          $dbpass = 'root123';
          $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
    
