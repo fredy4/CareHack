@@ -16,7 +16,9 @@
 	
 	if ($otp==$uotp) {
 		
-		header("Location:appointment.php");
+		echo '<script type="text/javascript">';
+		echo 'window.location.href="appointment.php";';
+		echo '</script>';
 	}
 	else {
 		echo "<script> alert('You have entered a wrong OTP. Please try again.');window.location.href = 'verify.php';</script>";

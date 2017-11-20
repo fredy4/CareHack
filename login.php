@@ -57,7 +57,9 @@
     	
     	// Process your response here
     	//echo $response;
-				header("Location:verify.php");
+				echo '<script type="text/javascript">';
+				echo 'window.location.href="verify.php";';
+				echo '</script>';
 			}
 
 			elseif ($_POST["submit"]=="login") {
@@ -67,7 +69,9 @@
 						$_SESSION["log"]=1;
 						$_SESSION["type"]="p";
 						$_SESSION["mno"]=$id;
-						header("Location:appointment.php");
+						echo '<script type="text/javascript">';
+						echo 'window.location.href="appointment.php";';
+						echo '</script>';
 
 				}
 			}
